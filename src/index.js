@@ -1,18 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 
-const App = (props) => {
-    return (
-        <h2 className="text-center">
-            {props.headerMessage}
-        </h2>
-    )
+const Header = ({message}) => {
+  return (
+    <h2 className='Header text-center'>
+      {message}
+    </h2>
+  )
 }
-App.PropTypes = {
-    headerMessage: React.PropTypes.string
+
+Header.propTypes = {
+  message: PropTypes.string
+}
+
+const App = () => {
+  return (
+    <div className="App">
+      <Header message='Naming Constests' />
+      <div>
+        ...
+      </div>
+    </div>
+  )
 }
 
 ReactDOM.render(
-  <App headerMessage={4} />,
+  <App />,
   document.getElementById('root')
 )
