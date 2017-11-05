@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const color = Math.random() > 0.5 ? 'green' : 'red'
+const App = (props) => {
+    return (
+        <h2 className="text-center">
+            {props.headerMessage}
+        </h2>
+    )
+}
+App.PropTypes = {
+    headerMessage: React.PropTypes.string
+}
 
 ReactDOM.render(
-  <h1 style={{color: color}}>
-    Hello, world! -- {Math.random()}
-  </h1>,
+  <App headerMessage={4} />,
   document.getElementById('root')
 )
