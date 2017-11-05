@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
-import ContestsPreview from './ContestsPreview'
+import PokemonApi from './PokemonApi';
+
 class App extends React.Component {
     state = { 
         pageHeader: 'React Header'
@@ -11,8 +12,8 @@ class App extends React.Component {
                 <Header message={this.state.pageHeader} />
                 <div>
                     {/* Loop used the function map() */}
-                    {this.props.contests.map(contests => 
-                        <ContestsPreview {...contests} />
+                    {this.props.results.map(results => 
+                        <PokemonApi {...results} />
                     )}
                 </div>
             </div>

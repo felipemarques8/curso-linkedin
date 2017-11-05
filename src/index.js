@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
 import data from './testData'
+import pokemon from './pokemon'
 console.log('====================================')
-console.log(data)
+console.log(pokemon)
 console.log('====================================')
 
 ReactDOM.render(
-  <App contests={data.contests}/>,
+  <App results={pokemon.results}/>,
   document.getElementById('root')
 )
