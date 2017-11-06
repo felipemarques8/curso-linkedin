@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
 
-ReactDOM.render(
-  <App initialProducts={[]}/>,
-  document.getElementById('root')
-)
+  ReactDOM.render(
+    <App initialProducts={window.initialData.products}/>,
+    document.getElementById('root')
+  )

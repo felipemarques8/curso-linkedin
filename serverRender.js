@@ -10,8 +10,11 @@ import axios from 'axios'
 const serverRender = () =>
 axios.get(`${config.serverUrl}/api/products`)
     .then(resp => {
-      return ReactDOMServer.renderToString(
-          <App initialProducts={resp.data.products} />
-        )
+      return {
+          initialMarkup: ReactDOMServer.renderToString(
+            <App initialProducts={resp.data.products} />
+          ),
+          initialData: resp.data
+      }
     })
 export default serverRender
