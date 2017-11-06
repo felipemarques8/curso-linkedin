@@ -13,12 +13,16 @@ server.use(sassMiddleware({
     dest: path.join(__dirname, 'public')
 }))
 
-import './serverRender'
+import serverRender from './serverRender'
 
 server.get('/', (req, res) => {
-    res.status(200).render('index', {
-        content: '...'
-    })
+    serverRender()
+        .then(content => {
+            res.status(200).render('index', {
+                content
+            })
+        })
+        .catch(console.error)
 })
 
 server.use('/api', apiRouter)

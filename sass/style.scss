@@ -1,18 +1,30 @@
 .ProductsPreview{
-    margin: 1em;
+    margin: 1em 0 1em;
+    
     .img-product{
         padding: 0.5em;
+        border:1px solid #CCC;
+    }
+    .img-product img{
+        width: 100%;
+        height: 250px;
     }
     .name-product{
         border-bottom: 1px solid #CCC;
         padding: 0.25em 0.5em;
+        border-left:1px solid #CCC;
+        border-right:1px solid #CCC;
         font-weight: bold;
         background-color: #eee;
     }
     .category-name{
         padding: 0.5em;
+        border-left:1px solid #CCC;
+        border-right:1px solid #CCC;
+        font-size: 1rem;
     }
     .price-product{
         padding: 0.5em;
+        border:1px solid #CCC;
     }
 }

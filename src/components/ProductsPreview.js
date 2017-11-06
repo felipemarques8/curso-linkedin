@@ -4,13 +4,13 @@ const ProductsPreview = (products) => {
     return(
         <div className='ProductsPreview col-md-3'>
             <div className='img-product'>
-                {products.imgProduct}
+                <img src={products.imgProduct} />
             </div>
             <div className='name-product'>
                 {products.nameProduct}
             </div>
             <div className='category-name'>
-                {products.categoryName}
+                Category: {products.categoryName}
             </div>
             <div className='price-product'>
                 {products.moeda} {products.priceProduct}

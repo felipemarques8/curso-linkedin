@@ -7,7 +7,7 @@ import data from '../produtoData'
 class App extends React.Component {
     state = { 
         pageHeader: 'React Header',
-        products: []
+        products: this.props.initialProducts
      }
      componentDidMount(){
         axios.get('/api/products')
@@ -22,6 +22,7 @@ class App extends React.Component {
         // clean timers, listeners
     }
     render() {
+        debugger
         return (
             <div className="App">
                 <Header message={this.state.pageHeader} />
