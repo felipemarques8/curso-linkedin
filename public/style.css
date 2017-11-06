@@ -1,6 +1,5 @@
 .ProductsPreview {
-  margin: 1em;
-  border: 1px solid #CCC; }
+  margin: 1em; }
   .ProductsPreview .img-product {
     padding: 0.5em; }
   .ProductsPreview .name-product {

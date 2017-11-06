@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductsPreview = (products) => {
     return(
-        <div className='ProductsPreview'>
+        <div className='ProductsPreview col-md-3'>
             <div className='img-product'>
                 {products.imgProduct}
             </div>
