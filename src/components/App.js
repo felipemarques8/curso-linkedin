@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import Header from './Header'
 import ContestsPreview from './ContestsPreview'
 import ProductsPreview from './ProductsPreview'
@@ -9,12 +10,16 @@ class App extends React.Component {
         products: []
      }
      componentDidMount(){
-        this.setState({
-            products: data.products
-        })
+        axios.get('/api/products')
+            .then(resp =>{
+                this.setState({
+                    products: resp.data.products
+                })
+            })
+            .catch(console.error)
      }
      componentWillUnmount(){
-        
+        // clean timers, listeners
     }
     render() {
         return (
