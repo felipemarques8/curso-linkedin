@@ -1,0 +1,37 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "nameProduct": "Ovos",
+        "priceProduct": 12.50,
+        "categoryName": "Frios",
+        "imgProduct": "",
+        "moeda": "R$"
+      },
+      {
+        "id": 2,
+        "nameProduct": "Queijo",
+        "priceProduct": 21.50,
+        "categoryName": "Frios",
+        "imgProduct": "",
+        "moeda": "R$"
+      },
+      {
+        "id": 3,
+        "nameProduct": "Mortadela",
+        "priceProduct": 30.50,
+        "categoryName": "Frios",
+        "imgProduct": "",
+        "moeda": "R$"
+      },
+      {
+        "id": 4,
+        "nameProduct": "Peito de Peru",
+        "priceProduct": 45.50,
+        "categoryName": "Frios",
+        "imgProduct": "",
+        "moeda": "R$"
+      }
+    ]
+  }
+  

@@ -1,0 +1,14 @@
+.ProductsPreview {
+  margin: 1em;
+  border: 1px solid #CCC; }
+  .ProductsPreview .img-product {
+    padding: 0.5em; }
+  .ProductsPreview .name-product {
+    border-bottom: 1px solid #CCC;
+    padding: 0.25em 0.5em;
+    font-weight: bold;
+    background-color: #eee; }
+  .ProductsPreview .category-name {
+    padding: 0.5em; }
+  .ProductsPreview .price-product {
+    padding: 0.5em; }

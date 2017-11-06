@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
-import data from './testData'
-import pokemon from './pokemon'
+import data from './produtoData'
 console.log('====================================')
-console.log(pokemon)
+console.log(data)
 console.log('====================================')
 
 ReactDOM.render(
-  <App results={pokemon.results}/>,
+  <App products={data.products}/>,
   document.getElementById('root')
 )
