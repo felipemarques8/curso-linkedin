@@ -3,13 +3,12 @@ import Header from './Header'
 import ContestsPreview from './ContestsPreview'
 import ProductsList from './ProductsList'
 import Products from './Products'
-import { currentId } from 'async_hooks';
 
 const pushState = (obj, url) => 
     window.history.pushState(obj, '', url)
 class App extends React.Component {
     state = { 
-        pageHeader: 'React Header',
+        pageHeader: 'Header',
         products: this.props.initialProducts
      }
      componentDidMount(){

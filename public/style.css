@@ -1,29 +1,30 @@
-.ProductsPreview {
-  margin: 1em 0 1em; }
-  .ProductsPreview .img-product {
-    padding: 0.5em;
-    border: 1px solid #CCC; }
-  .ProductsPreview .img-product img {
-    width: 100%;
-    height: 250px; }
-  .ProductsPreview .name-product {
-    border-bottom: 1px solid #CCC;
-    padding: 0.25em 0.5em;
-    border-left: 1px solid #CCC;
-    border-right: 1px solid #CCC;
-    font-weight: bold;
-    background-color: #eee; }
-  .ProductsPreview .category-name {
-    padding: 0.5em;
-    border-left: 1px solid #CCC;
-    border-right: 1px solid #CCC;
-    font-size: 1rem; }
-  .ProductsPreview .price-product {
-    padding: 0.5em;
-    border: 1px solid #CCC; }
-
-.add-to-cart {
-  margin-top: 1em; }
-  .add-to-cart .btn-success {
-    cursor: pointer;
-    color: #FFF !important; }
+.App {
+  padding-top: 2em; }
+  .App .ProductsPreview {
+    margin: 1em 0 1em; }
+    .App .ProductsPreview .img-product {
+      padding: 0.5em;
+      border: 1px solid #CCC; }
+    .App .ProductsPreview .img-product img {
+      width: 100%;
+      height: 250px; }
+    .App .ProductsPreview .name-product {
+      border-bottom: 1px solid #CCC;
+      padding: 0.25em 0.5em;
+      border-left: 1px solid #CCC;
+      border-right: 1px solid #CCC;
+      font-weight: bold;
+      background-color: #eee; }
+    .App .ProductsPreview .category-name {
+      padding: 0.5em;
+      border-left: 1px solid #CCC;
+      border-right: 1px solid #CCC;
+      font-size: 1rem; }
+    .App .ProductsPreview .price-product {
+      padding: 0.5em;
+      border: 1px solid #CCC; }
+  .App .add-to-cart {
+    margin-top: 1em; }
+    .App .add-to-cart .btn-success {
+      cursor: pointer;
+      color: #FFF !important; }
