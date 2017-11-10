@@ -1,8 +1,10 @@
 import React from 'react'
 import Header from './Header'
 import ContestsPreview from './ContestsPreview'
-import ProductsList from './ProductsList';
-import data from '../produtoData'
+import ProductsList from './ProductsList'
+
+const pushState = (obj, url) => 
+    window.history.pushState(obj, '', url)
 class App extends React.Component {
     state = { 
         pageHeader: 'React Header',
@@ -14,12 +16,20 @@ class App extends React.Component {
      componentWillUnmount(){
         // clean timers, listeners
     }
+    fetchProducts = (productsId) => {
+        pushState(
+            {currentProductsId: productsId},
+            `/products/${productsId}`
+        ) 
+    }
     render() {
-        debugger
+        /* debugger */
         return (
             <div className="App">
                 <Header message={this.state.pageHeader} />
-                <ProductsList products = {this.state.products} />
+                <ProductsList 
+                    onProductsClick={this.fetchProducts}
+                    products = {this.state.products} />
             </div>
         )
     }

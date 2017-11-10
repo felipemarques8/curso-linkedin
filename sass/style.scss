@@ -29,6 +29,10 @@
     }
 }
 
-.link{
-    cursor: pointer;
+.add-to-cart{
+    margin-top: 1em;
+    .btn-success{
+        cursor: pointer;
+        color: #FFF!important;
+    }
 }

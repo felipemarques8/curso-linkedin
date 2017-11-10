@@ -22,5 +22,8 @@
     padding: 0.5em;
     border: 1px solid #CCC; }
 
-.link {
-  cursor: pointer; }
+.add-to-cart {
+  margin-top: 1em; }
+  .add-to-cart .btn-success {
+    cursor: pointer;
+    color: #FFF !important; }
