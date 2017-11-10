@@ -7,8 +7,8 @@ const ProductsList = ({ products, onProductsClick }) => (
             <div className='container'>
                 <div className='row'>
                     {/* Loop used the function map() */}
-                    {products.map(products => 
-                        <ProductsPreview key={products.id} onClick={onProductsClick} {...products} />
+                    {Object.keys(products).map(productsId => 
+                        <ProductsPreview key={productsId} onClick={onProductsClick} {...products[productsId]} />
                     )}
                 </div>
             </div>
@@ -16,7 +16,7 @@ const ProductsList = ({ products, onProductsClick }) => (
 )
 
 ProductsList.propTypes = {
-    products: PropTypes.array,
+    products: PropTypes.object,
     onProductsClick: PropTypes.func.isRequired
 }   
 
