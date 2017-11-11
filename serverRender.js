@@ -12,7 +12,7 @@ axios.get(`${config.serverUrl}/api/products`)
     .then(resp => {
       return {
           initialMarkup: ReactDOMServer.renderToString(
-            <App initialProducts={resp.data.products} />
+            <App initialData={resp.data} />
           ),
           initialData: resp.data
       }

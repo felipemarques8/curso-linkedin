@@ -2,32 +2,35 @@ import React from 'react'
 import Header from './Header'
 import ProductsList from './ProductsList'
 import Product from './Product'
+import PropTypes from 'prop-types'
 import * as api from '../api'
 
 const pushState = (obj, url) => 
     window.history.pushState(obj, '', url)
 class App extends React.Component {
-    state = { 
-        pageHeader: 'Header',
-        products: this.props.initialProducts
-     }
+    
+    static propTypes = {
+        initialData: PropTypes.object.isRequired
+    }
+    
+    state = this.props.initialData
+
      componentDidMount(){
         
      }
      componentWillUnmount(){
         // clean timers, listeners
     }
-    fetchProducts = (productsId) => {
+    fetchProduct = (productId) => {
         pushState(
-            {currentProductsId: productsId},
-            `/products/${productsId}`
+            {currentProductId: productId},
+            `/products/${productId}`
         ) 
         
-        api.fetchProduct(productsId).then(product =>{
+        api.fetchProduct(productId).then(product =>{
             //lookup products
             this.setState({
-                pageHeader: product.nameProduct,
-                currentProductsId: product.id,
+                currentProductId: product.id,
                 products: {
                     ...this.state.products,
                     [product.id]: product
@@ -35,13 +38,24 @@ class App extends React.Component {
             })
         })
     }
+    currentProduct(){
+        return this.state.products[this.state.currentProductId]
+    }
+
+    pageHeader(){
+        if(this.state.currentProductId){
+            return this.currentProduct().nameProduct
+        }
+        return 'Todos Produtos'
+    }
+
     currentContent(){
-        if (this.state.currentProductsId) {
-          return <Product {...this.state.products[this.state.currentProductsId]} />
+        if (this.state.currentProductId) {
+          return <Product {...this.currentProduct()} />
         }
 
         return <ProductsList 
-        onProductsClick={this.fetchProducts}
+        onProductClick={this.fetchProduct}
         products = {this.state.products} /> 
     }
 
@@ -49,7 +63,7 @@ class App extends React.Component {
         /* debugger */
         return (
             <div className="App">
-                <Header message={this.state.pageHeader} />
+                <Header message={this.pageHeader()} />
                 {this.currentContent()}
             </div>
         )

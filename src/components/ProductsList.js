@@ -2,13 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ProductsPreview from './ProductsPreview'
 
-const ProductsList = ({ products, onProductsClick }) => (
+const ProductsList = ({ products, onProductClick }) => (
         <div className="ProductsList">
             <div className='container'>
                 <div className='row'>
                     {/* Loop used the function map() */}
-                    {Object.keys(products).map(productsId => 
-                        <ProductsPreview key={productsId} onClick={onProductsClick} {...products[productsId]} />
+                    {Object.keys(products).map(productId => 
+                        <ProductsPreview 
+                            key={productId} 
+                            onClick={onProductClick} 
+                            {...products[productId]} />
                     )}
                 </div>
             </div>
@@ -17,7 +20,7 @@ const ProductsList = ({ products, onProductsClick }) => (
 
 ProductsList.propTypes = {
     products: PropTypes.object,
-    onProductsClick: PropTypes.func.isRequired
+    onProductClick: PropTypes.func.isRequired
 }   
 
 export default ProductsList
