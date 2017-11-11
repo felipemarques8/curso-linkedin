@@ -1,8 +1,8 @@
 import React from 'react'
 import Header from './Header'
-import ContestsPreview from './ContestsPreview'
 import ProductsList from './ProductsList'
-import Products from './Products'
+import Product from './Product'
+import * as api from '../api'
 
 const pushState = (obj, url) => 
     window.history.pushState(obj, '', url)
@@ -22,16 +22,22 @@ class App extends React.Component {
             {currentProductsId: productsId},
             `/products/${productsId}`
         ) 
-    
-        //lookup products
-        this.setState({
-            pageHeader: this.state.products[productsId].nameProduct,
-            currentProductsId: productsId
+        
+        api.fetchProduct(productsId).then(product =>{
+            //lookup products
+            this.setState({
+                pageHeader: product.nameProduct,
+                currentProductsId: product.id,
+                products: {
+                    ...this.state.products,
+                    [product.id]: product
+                }
+            })
         })
     }
     currentContent(){
         if (this.state.currentProductsId) {
-          return <Products {...this.state.products[this.state.currentProductsId]} />
+          return <Product {...this.state.products[this.state.currentProductsId]} />
         }
 
         return <ProductsList 
