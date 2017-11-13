@@ -1,6 +1,7 @@
 import config from './config'
 import apiRouter from './api'
 import sassMiddleware from 'node-sass-middleware'
+import serverRender from './serverRender'
 import path from 'path'
 
 import express from 'express'
@@ -13,11 +14,9 @@ server.use(sassMiddleware({
     dest: path.join(__dirname, 'public')
 }))
 
-import serverRender from './serverRender'
-
-server.get('/', (req, res) => {
-    serverRender()
-        .then(( { initialMarkup, initialData }) => {
+server.get(['/', '/product/:productId'], (req, res) => {
+    serverRender(req.params.productId)
+        .then(({ initialMarkup, initialData }) => {
             res.status(200).render('index', {
                 initialMarkup,
                 initialData

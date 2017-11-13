@@ -1,30 +1,34 @@
+body {
+  background: #eeee; }
+
 .App {
-  padding-top: 2em; }
+  padding-top: 2em;
+  padding-bottom: 2em; }
   .App .ProductsPreview {
     margin: 1em 0 1em; }
     .App .ProductsPreview .img-product {
-      padding: 0.5em;
-      border: 1px solid #CCC; }
+      border-bottom: 1px solid #cccccc;
+      background: #ffffff;
+      border-radius: .25em;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem; }
     .App .ProductsPreview .img-product img {
       width: 100%;
-      height: 250px; }
+      height: 253px;
+      padding: 3.5em; }
     .App .ProductsPreview .name-product {
-      border-bottom: 1px solid #CCC;
       padding: 0.25em 0.5em;
-      border-left: 1px solid #CCC;
-      border-right: 1px solid #CCC;
       font-weight: bold;
-      background-color: #eee; }
+      float: left;
+      margin-bottom: 1rem; }
     .App .ProductsPreview .category-name {
       padding: 0.5em;
-      border-left: 1px solid #CCC;
-      border-right: 1px solid #CCC;
-      font-size: 1rem; }
-    .App .ProductsPreview .price-product {
-      padding: 0.5em;
-      border: 1px solid #CCC; }
+      font-size: 1rem;
+      float: right;
+      margin-bottom: 1rem; }
   .App .add-to-cart {
-    margin-top: 1em; }
+    margin-top: 2em;
+    clear: both; }
     .App .add-to-cart .btn-success {
       cursor: pointer;
       color: #FFF !important; }

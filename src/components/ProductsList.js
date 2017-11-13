@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ProductsPreview from './ProductsPreview'
 
 const ProductsList = ({ products, onProductClick }) => (
-        <div className="ProductsList">
+        <div className="ProductsList animated fadeInUp">
             <div className='container'>
                 <div className='row'>
                     {/* Loop used the function map() */}

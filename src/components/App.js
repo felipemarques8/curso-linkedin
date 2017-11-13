@@ -7,6 +7,7 @@ import * as api from '../api'
 
 const pushState = (obj, url) => 
     window.history.pushState(obj, '', url)
+    
 class App extends React.Component {
     
     static propTypes = {
@@ -24,7 +25,7 @@ class App extends React.Component {
     fetchProduct = (productId) => {
         pushState(
             {currentProductId: productId},
-            `/products/${productId}`
+            `/product/${productId}`
         ) 
         
         api.fetchProduct(productId).then(product =>{

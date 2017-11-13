@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import InputNumber from 'rc-input-number'
 import PropTypes from 'prop-types'
 
 class ProductsPreview extends Component {
@@ -9,19 +8,16 @@ class ProductsPreview extends Component {
     render() {
         return(
             <div className='ProductsPreview col-md-3'>
-                <div className='img-product'>
+                <div className='img-product animated fadeInUpBig'>
                     <img src={this.props.imgProduct} />
                 </div>
-                <div className='name-product'>
+                <div className='name-product aimated fadeInUpBig'>
                     {this.props.nameProduct}
                 </div>
-                <div className='category-name'>
-                    Category: {this.props.categoryName}
-                </div>
-                <div className='price-product'>
+                <div className='category-name animated fadeInUpBig'>
                     {this.props.moeda} {this.props.priceProduct}
                 </div>
-                <div className='add-to-cart'>
+                <div className='add-to-cart animated fadeInUpBig'>
                     <a className="btn btn-success" onClick={this.handleClick}>
                         Ver mais
                     </a>
@@ -36,8 +32,8 @@ ProductsPreview.propTypes = {
     imgProduct: PropTypes.string.isRequired,
     nameProduct: PropTypes.string.isRequired,
     categoryName: PropTypes.string.isRequired,
-    moeda: PropTypes.string.isRequired,
     priceProduct: PropTypes.number.isRequired,
+    moeda: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
 }
 

@@ -1,10 +1,10 @@
 import React, { Component} from 'react'
 import PropTypes from 'prop-types'
 
-export class Product extends Component {
+class Product extends Component {
   render() {
     return (
-      <div className="Product">
+      <div className="Product animated bounceInUp">
         {this.props.description}
       </div>
     )
