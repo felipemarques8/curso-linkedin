@@ -26,6 +26,8 @@ body {
       font-size: 1rem;
       float: right;
       margin-bottom: 1rem; }
+  .App .Product img {
+    width: 100%; }
   .App .add-to-cart {
     margin-top: 2em;
     clear: both; }

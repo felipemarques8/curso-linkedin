@@ -2,10 +2,18 @@ import express from 'express'
 import data from '../src/produtoData'
 
 const router = express.Router()
-const products = data.products.reduce((obj, product) => {
-  obj[product.id] = product
-  return obj
-}, {})
+
+// Used reduce
+//const products = data.products.reduce((obj, product) => {
+//  obj[product.id] = product
+//  return obj
+//}, {})
+
+// Used forEach
+const products = {}
+data.products.forEach(product => {
+  products[product.id] = product
+})
 
 router.get('/products', (req, res) => {
   res.send({ 
